@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Result</title>
+</head>
+<body>
+    <h1>Survey Result</h1>
+    <p>Thank you for completing the survey! Based on your response, check out the links below:</p>
+    <label>{{ responses }}</label><br>
+    {% for item, details in results.items() %}
+        <h3>{{ item }}</h3>
+        <img src="{{ details['image'] }}" alt="{{ item }}" width="200">
+        <a href="{{ details['link'] }}" target="_blank">More Info</a>
+        <br><br>
+    {% endfor %}
+</body>
+</html>
